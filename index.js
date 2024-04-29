@@ -1,10 +1,11 @@
 require('dotenv').config({ path: './.env' });
 const express = require('express');
 const app = express();
+const path = require('path');
 const PORT = process.env.PORT;
+const root = require('./routes/root');
 
-
-app.get("/api", (req, res) => {
+app.get(root, (req, res) => {
     res.json({ message: "Hello from server!" });
   });
   
